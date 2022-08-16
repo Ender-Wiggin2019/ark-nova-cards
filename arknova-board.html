@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ark Nova Maps">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="viewport" content='width=930'>
+
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta http-equiv="Cache" content="no-cache">
+
+  <link rel="shortcut icon" type="image/png" href="images-ark/favicon.png">
+  <link rel="stylesheet" type="text/css" href="css/mystyles-ark.css?v=1.0.0">
+  <link rel="stylesheet" href="css/odometer.css">
+  <link rel="stylesheet" href="css/odometer-cards-ark.css">
+  <title>Ark Nova Cards</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116626580-1"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?854bdf16e4e9c2242de5b5871f532196";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-116626580-1');
+</script>
+</head>
+<script type="text/javascript">
+  function setMap(i) {
+    let mysrc =
+            ["../images-ark/compress/plan1.jpg","../images-ark/compress/plan2.jpg","../images-ark/compress/plan3.jpg","../images-ark/compress/plan4.jpg","../images-ark/compress/plan5.jpg","../images-ark/compress/plan6.jpg","../images-ark/compress/plan7.jpg","../images-ark/compress/plan8.jpg","../images-ark/compress/plan9.jpg","../images-ark/compress/plan10.jpg","../images-ark/compress/plan0.jpg","../images-ark/compress/planA.jpg"];
+    let mapTitle =
+          ["观测塔","户外营地","银湖","商业港口","主题餐厅","研究院","冰淇淋甜品店","好莱坞山","地理动物园","救助站","地图0","地图A"];
+    let mapText =
+          ["饲养区必须与观测塔的六角格相邻，而不仅仅是与另外3个岩石格相邻。这个观测平台对特殊饲养区无效。如果你将一个动物放归野外(而因此将一个已占用的饲养区翻回闲置的一面)，然后安置一个新动物到该饲养区，你将再次获得2魅力。",
+              "饲养区必须与户外营地的六角格相邻，而不仅仅是与另外4个水域格相邻。户外营地对特殊饲养区无效。当安置动物时，你可以将任何与户外营地相邻的标准饲养区，视为扩大2格的饲养区。",
+              "环湖四周是高利润区域。",
+              "一旦你在商业港口相邻的可建造六角格放置了建筑，则商业港口视为已被连接的。你可以再你回合的前、中、后任意时刻，或是行动中，使用其能力。然而，每回合你仅可以通过商业港口弃除1张卡牌。你不可以在休息期间或其他玩家的回合中，使用其能力。",
+              "在休息期间，每有一个与主题餐厅相邻并覆盖有建筑的六角格，你获得1元收入。与你在这里建造的建筑类型，以及饲养区是否被占用无关。",
+              "一旦你在研究院相邻的可建造六角格放置了建筑，则研究院视为已连接的。一旦激活，你能在缺少1个条件的情况下，打出动物卡牌，但你不能忽略岩石或者水域格的需求。",
+              "如果你已覆盖了所有冰淇淋店，则在休息的收入阶段中，你动物园地图上的每个贩售亭使你额外获得1元。",
+              "具有H标记的六角格可以如同其它六角格一样被覆盖，这类似于放置奖励，但并不视为一个放置奖励(不能触发考古学家的效果)。每次你放置一个建筑到H标记上时，从牌库中依次展示卡牌，直到你展示了一张赞助商卡牌，将该牌加入手牌并弃置其余展示的卡牌。一旦你覆盖了所有的H标志，则你之后打出的每张赞助商卡牌等级-1。",
+              "游戏开始时，在版图上每个大洲的空缺位置上放置一个玩家标记。每个大洲限一次，当你放置对应大洲动物到版图对应大洲区域时，可以移除大洲标记并选择右侧5个奖励中的一个，并将玩家标记移回供应区。不论是普通饲养区还是特殊饲养区都可以触发技能。群居动物无法触发技能，因为群居动物并不会使用特定的饲养区。左侧动保奖励效果是移除一个大洲玩家标记，并选择下方奖励中的一个。",
+              "挖掘1(你可以从手牌中弃1张牌并摸1张牌，或者从展示区弃1张牌并补充1张牌)。如果你弃置的是动物牌(除了萌宠)，可以将卡牌放置到上方绿色箭头区域，该卡牌视为“已打出”，但不会获得其它卡牌效果(例如魅力和卡牌上的特殊技能)。已打出的内容包括：标志(可以触发赞助卡牌的打出标志效果)、饲养区需求(例如可以完成小型动物的保护项目)、岩石标水域需求。你最多只能放置3张动物卡牌，如果在触发技能时已经放置了3张动物，则你只能触发挖掘1的效果。你不能放生上方的动物。",
+              "一般推新使用，强度较高。",
+              "一般推新使用，强度较高。"];
+    document.getElementById("map-board").src = mysrc[i];
+      console.log(document.getElementById("map-board"))
+      document.getElementById("map-title").textContent = mapTitle[i];
+      document.getElementById("map-text").textContent = mapText[i];
+
+  }
+</script>
+<html>
+<body>
+  <div class="app-container">
+    <div class="list-container">
+      <div id="buttonsContainer">
+      <div id="buttonsContainer-header">
+        <div id="titleContainer">
+          <div class="title-style">方舟动物园版图</div>
+        </div>
+        <a disabled id="btn-selectedCards" class="button btn-selected-cards disabled" title="open selected cards" href="no-selected-card.html" target="_blank">SELECTED
+          <div id="selectedCardsAmount">0</div>
+        </a>
+    </div>
+
+
+  <div id="buttonsContainer-body">
+    <div id="myBtnContainer1" style="line-height:55px;margin-bottom:10px;">
+      <button id="plan1" class="button btn1 background-color-map  " onclick="setMap(0)" title="filter Animals cards">地图1 观测塔</button>
+      <button id="plan2" class="button btn1 background-color-map  " onclick="setMap(1)" title="filter Animals cards">地图2 户外营地</button>
+      <button id="plan3" class="button btn1 background-color-map  " onclick="setMap(2)" title="filter Animals cards">地图3 银湖</button>
+      <button id="plan4" class="button btn1 background-color-map  " onclick="setMap(3)" title="filter Animals cards">地图4 商业港口</button>
+      <button id="plan5" class="button btn1 background-color-map  " onclick="setMap(4)" title="filter Animals cards">地图5 主题餐厅</button>
+
+      <button id="plan6" class="button btn1 background-color-map  " onclick="setMap(5)" title="filter Animals cards">地图6 研究院</button>
+      <button id="plan7" class="button btn1 background-color-map  " onclick="setMap(6)" title="filter Animals cards">地图7 冰淇淋甜品店</button>
+      <button id="plan8" class="button btn1 background-color-map  " onclick="setMap(7)" title="filter Animals cards">地图8 好莱坞山</button>
+      <button id="plan9" class="button btn1 background-color-map  " onclick="setMap(8)" title="filter Animals cards">地图9 地理动物园</button>
+      <button id="plan10" class="button btn1 background-color-map  " onclick="setMap(9)" title="filter Animals cards">地图10 救助站</button>
+
+      <button id="plan0" class="button btn1 background-color-beginner-map  " onclick="setMap(10)" title="filter Animals cards">地图0 新手图</button>
+      <button id="planA" class="button btn1 background-color-beginner-map  " onclick="setMap(11)" title="filter Animals cards">地图A 新手图</button>
+    </div>
+  </div>
+
+        <div style="        position:relative;
+
+        /*left:50%;*/
+
+        margin-left: 15px;">
+
+      <img class = "map-board" id = "map-board" src = "../images-ark/compress/plan1.jpg" title = ""          style="
+  width: 760px;
+  height: 392px;
+  border-radius: 5px;
+  margin-left: 6px;
+  margin-top: 20px;
+    box-shadow: 0 0 7px 1px black;">
+            <br>
+            <span id = "map-title" style="font-size: 40px;margin-left: 10px;margin-top: 20px;"></span>
+            <br>
+            <span id = "map-text" style="font-size: 20px;margin-left: 10px;margin-top: 20px;"></span>
+            </div>
+
+      <script>setMap(0);</script>
+
+      </div>
+  <!--ANIMALS-->
+  <ul class="myUL" style="clear:both;">
+
+      <li onclick="getClickedCard();"
+        class="map1 filterDiv-map plan1">
+
+      </li>
+      <li onclick="getClickedCard();"
+        class="map2 filterDiv-map plan2">
+
+      </li>
+      <li onclick="getClickedCard();"
+        class="map3 filterDiv-map plan3">
+
+      </li>
+      <li onclick="getClickedCard();"
+        class="map4 filterDiv-map plan4">
+
+      </li>
+      <li onclick="getClickedCard();"
+        class="map5 filterDiv-map plan5">
+
+      </li>
+      <li onclick="getClickedCard();"
+        class="map6 filterDiv-map plan6">
+
+      </li>
+      <li onclick="getClickedCard();"
+        class="map7 filterDiv-map plan7">
+
+      </li>
+      <li onclick="getClickedCard();"
+        class="map8 filterDiv-map plan8">
+
+      </li>
+
+
+    <li onclick="getClickedCard();"
+        class="map10 filterDiv-map plan10">
+
+    </li>
+      <li onclick="getClickedCard();" name="111"
+        class="map0 filterDiv-map plan0">
+      </li>
+      <li onclick="getClickedCard();"
+        class="mapA filterDiv-map planA">
+
+      </li>
+
+  </ul>
+
+
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/odometer.js"></script>
+<script src="js/myscripts-ark.js?v=1.0.0"></script>
+
+
+
+</body>
+</html>

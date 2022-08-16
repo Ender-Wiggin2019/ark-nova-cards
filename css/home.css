@@ -1,0 +1,86 @@
+
+/* fonts */
+@font-face {
+    font-family: Prototype;
+    src: url(../fonts/Prototype.ttf);
+}
+
+.grid {
+  font-family: Prototype;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  width: 369px;
+  grid-template-columns: auto;
+  grid-gap: 5px;
+  font-size: 26px;
+  text-align: left;
+}
+
+.grid > a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ccc;
+  box-shadow: inset 0 0 0px 1px #222;
+  height: 90px;
+  line-height: 130px;
+  border-radius: 10px;
+  background-size: 369px 90px;
+  color: #eee;
+  text-shadow: 0 0 2px black, 0 2px 1px black;
+  padding-left: 17px;
+}
+.grid > a:hover {
+  filter: brightness(120%);
+}
+
+.planet0 {
+  border:none !important;
+  box-shadow: none !important;
+  height: 150px !important;
+  color: #5f9f5a !important;
+}
+
+.title-top {
+  margin-left: 50px;
+  font-size:30px;
+  width: 300px;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+
+.title-bottom {
+  font-size:50px;
+  margin-left:0px;
+  margin-bottom:60px;
+}
+
+.planet1 {
+  background-image: url("../images/buttons-homepage/planet1.png");
+}
+.planet2 {
+  background-image: url("../images/buttons-homepage/planet2.png");
+}
+.planet3 {
+  background-image: url("../images/buttons-homepage/planet3.png");
+}
+.planet4 {
+  background-image: url("../images/buttons-homepage/planet4.png");
+}
+.planet5 {
+  background-image: url("../images/buttons-homepage/planet5.png");
+}
+.planet6 {
+  background-image: url("../images/buttons-homepage/planet6.png");
+}
+.planet7 {
+  background-image: url("../images/buttons-homepage/planet7.png");
+}
+.planet8 {
+  background-image: url("../images/buttons-homepage/planet8.png");
+}
+.planet9 {
+  background-image: url("../images/buttons-homepage/planet9.png");
+}

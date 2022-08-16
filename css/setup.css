@@ -1,0 +1,104 @@
+
+#buttonsContainerSetup {
+  background: #cccccc;
+  background: linear-gradient(to bottom right, #cccccc,#919191, #c9c9c9,#aaaaaa,#cacaca, #919191,#cccccc);
+  border-top: 2px solid rgb(221,221,221);
+  border-left: 2px solid rgb(221,221,221);
+  border-bottom: 2px solid rgb(137,137,137);
+  border-right: 2px solid rgb(137,137,137);
+  border-radius: 32px;
+  margin-left: 20px;
+  width: 1060px;
+  height: 60px;
+  margin-top: 20px;
+  transition: height 0.2s;
+  box-shadow: 0 0 1px 1px black;
+}
+
+.cards-container-setup {
+  margin-left: -70px;
+}
+
+.btn-generate {
+  outline: none;
+  vertical-align: top;
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: white;
+  font-family: Prototype;
+  background-color: #444;
+  margin-top: 10px;
+  margin-left: 12px;
+  margin-right: 37px;
+}
+
+.link-setup {
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: top;
+  font-family: Prototype;
+  text-align: center;
+  background: #ddd;
+  color: #222;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 1px;
+  height: 36px;
+  line-height: 36px;
+  width: 196px;
+  border-radius: 22px;
+  box-shadow: 0 2px 4px 1px rgba(0,0,0,.8);
+  border-top: 2px solid rgb(221,221,221);
+  border-left: 2px solid rgb(221,221,221);
+  border-bottom: 2px solid rgb(137,137,137);
+  border-right: 2px solid rgb(137,137,137);
+  margin-left: 295px;
+  margin-top: 10px;
+}
+
+.myUL {
+  display: inline-block;
+    width: 1115px;
+    list-style-type: none;
+}
+
+#titles_corporations {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  color: #e28c22;
+
+}
+
+#titles_projects {
+  margin-bottom: 50px;
+  color: #ccc;
+}
+
+#titles_preludes {
+  color: rgb(235,118,171);
+}
+
+.titles {
+    display: inline-block;
+    width: 500px;
+    text-shadow: 0 0 1px black, 0 2px 2px black;
+    letter-spacing: 1px;
+    vertical-align: top;
+    text-transform: uppercase;
+    font-family: Prototype;
+    margin-top: 0px;
+    line-height: 45px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+.expansions-setup {
+  display: inline-block;
+  vertical-align: bottom;
+}
