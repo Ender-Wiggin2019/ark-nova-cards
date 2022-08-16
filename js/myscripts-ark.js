@@ -214,11 +214,6 @@ function filterFunction(id) {
   btnDeck = document.querySelectorAll('button.active.btn3');
   btnElements = document.querySelectorAll('button.active.btn4');
   btnEnclosure = document.querySelectorAll('button.active.btn5');
-  btnReq = document.getElementById('reqs');
-  btnVP = document.getElementById('vp');
-  btnTile = document.querySelectorAll('button.active.btn-tile');
-
-  btnProduction = document.querySelectorAll('button.active.btn-production');
 
   //Text input filtering
   li = document.querySelectorAll('li.show');   //obtaining the new visible list after the subfilters check
@@ -312,148 +307,139 @@ function filterFunction(id) {
     x = document.querySelectorAll('li.show');
   }
 
-  //filter by Requirements
-  if (btnReq.classList.contains("active")) {
-    for (i = 0; i < x.length; i++) {
-        if (x[i].className.indexOf(btnReq.id) > -1) {w3AddClass(x[i], "show");}
-        else {w3RemoveClass(x[i], "show"); }
-        }
-    x = document.querySelectorAll('li.show');
-  } else {
-    document.getElementById("subfilterReqs").classList.add("subfilterReqs-disabled"); //to disble the subfilters
-  }
 
-  //filter by VP
-  if (btnVP.classList.contains("active")) {
-    for (i = 0; i < x.length; i++) {
-        if (x[i].querySelectorAll(".points").length > 0) {w3AddClass(x[i], "show");}
-        else {w3RemoveClass(x[i], "show"); }
-      }
-    x = document.querySelectorAll('li.show');
-  }
-
-  //filter by tiles
-  if (btnTile.length > 0)  {
-    for (i = 0; i < x.length; i++) {
-      show = false;
-      for (j = 0; j < btnTile.length; j++) {
-        if (x[i].querySelectorAll(".tile." + btnTile[j].id).length > 0) {
-          show = true;
-        }
-        if (show == true) {w3AddClass(x[i], "show");}
-        else {w3RemoveClass(x[i], "show"); }
-        }
-    }
-    x = document.querySelectorAll('li.show');
-  }
-
-
-  //filter by production
-  if (btnProduction.length > 0)  {
-    for (i = 0; i < x.length; i++) {
-      show = false;
-      for (j = 0; j < btnProduction.length; j++) {
-        if (x[i].querySelectorAll(btnProduction[j].id).length > 0) {
-          show = true;
-        }
-        if (show == true) {w3AddClass(x[i], "show");}
-        else {w3RemoveClass(x[i], "show"); }
-        }
-    }
-    x = document.querySelectorAll('li.show');
-  }
-
-
-  //filter by price
-  priceValue = document.getElementById("price").value;
-  if (priceValue < 0) {document.getElementById("price").value = 0;}
-  if (priceValue > 50) {document.getElementById("price").value = 50;}
-  if (priceValue > 0) {
-    for (i = 0; i < x.length; i++) {
-        if (x[i].querySelector(".price") == null) {cardValue = 0;}
-        else {cardValue = parseInt(x[i].querySelector(".price").textContent);}
-        if (cardValue >= priceValue) {w3AddClass(x[i], "show");}
-        else {w3RemoveClass(x[i], "show"); }
-      }
-    x = document.querySelectorAll('li.show');
-  }
-
-  //Filtering for the Requirements inputs
-  if (document.getElementById("reqs").classList.contains("active")) {
-    document.getElementById("subfilterReqs").classList.remove("subfilterReqs-disabled"); //enabling the subfilters
-
-    //Requirements input filtering
-    temperatureValue = document.getElementById("slider1").value;
-    oxygenValue = document.getElementById("slider2").value;
-    oceansValue = document.getElementById("slider3").value;
-    venusValue = document.getElementById("slider4").value;
-    scienceValue = document.getElementById("slider5").value;
-    jovianValue = document.getElementById("slider6").value;
-    venusTagValue = document.getElementById("slider7").value;
-    earthValue = document.getElementById("slider8").value;
-
-    if ( temperatureValue > -30 || oxygenValue > 0 || oceansValue > 0 || venusValue > 0 || scienceValue > 0
-      || jovianValue > 0 || venusTagValue > 0 || earthValue > 0) {
-      for (i = 0; i < x.length; i++) {
-
-        //obtaining the data without writing over it
-        temperatureData = parseInt(x[i].dataset.temperature);
-        oxygenData = parseInt(x[i].dataset.oxygen);
-        oceansData = parseInt(x[i].dataset.oceans);
-        venusData = parseInt(x[i].dataset.venus);
-        scienceData = parseInt(x[i].dataset.science);
-        jovianData = parseInt(x[i].dataset.jovian);
-        venusTagData = parseInt(x[i].dataset.venustag);
-        earthData = parseInt(x[i].dataset.earth);
-
-
-
-        show = false;
-        if (temperatureValue > -30) {
-          if ( temperatureValue <= temperatureData ) { show = true;}
-        }
-        if (oxygenValue > 0 && oxygenData > 0) {
-          if ( oxygenValue <= oxygenData ) { show = true;}
-        }
-        if (oceansValue > 0) {
-          if ( oceansValue <= oceansData ) { show = true }
-        }
-        if (venusValue > 0 ) {
-          if ( venusValue <= venusData ) { show = true }
-        }
-        if (scienceValue > 0 ) {
-          if ( scienceValue <= scienceData ) { show = true }
-        }
-        if (jovianValue > 0 ) {
-          if ( jovianValue <= jovianData ) { show = true }
-        }
-        if (venusTagValue > 0 ) {
-          if ( venusTagValue <= venusTagData ) { show = true }
-        }
-        if (earthValue > 0 ) {
-          if ( earthValue <= earthData ) { show = true }
-        }
-
-        //the check
-        if (show) {w3AddClass(x[i], "show");}
-        else {w3RemoveClass(x[i], "show");}
-      }
-    }
-  } else {
-    //to clear the inputs when the Requirements button is canceled
-    document.getElementById("slider1").value = -30;
-    document.getElementById("output1").innerHTML = -30;
-    document.getElementById("slider2").value = 0;
-    document.getElementById("output2").innerHTML = 0;
-    document.getElementById("slider3").value = 0;
-    document.getElementById("output3").innerHTML = 0;
-    document.getElementById("slider4").value = 0;
-    document.getElementById("output4").innerHTML = 0;
-    document.getElementById("slider5").value = 0;
-    document.getElementById("output5").innerHTML = 0;
-    document.getElementById("slider6").value = 0;
-    document.getElementById("output6").innerHTML = 0;
-  }
+  //
+  // //filter by VP
+  // if (btnVP.classList.contains("active")) {
+  //   for (i = 0; i < x.length; i++) {
+  //       if (x[i].querySelectorAll(".points").length > 0) {w3AddClass(x[i], "show");}
+  //       else {w3RemoveClass(x[i], "show"); }
+  //     }
+  //   x = document.querySelectorAll('li.show');
+  // }
+  //
+  // //filter by tiles
+  // if (btnTile.length > 0)  {
+  //   for (i = 0; i < x.length; i++) {
+  //     show = false;
+  //     for (j = 0; j < btnTile.length; j++) {
+  //       if (x[i].querySelectorAll(".tile." + btnTile[j].id).length > 0) {
+  //         show = true;
+  //       }
+  //       if (show == true) {w3AddClass(x[i], "show");}
+  //       else {w3RemoveClass(x[i], "show"); }
+  //       }
+  //   }
+  //   x = document.querySelectorAll('li.show');
+  // }
+  //
+  //
+  // //filter by production
+  // if (btnProduction.length > 0)  {
+  //   for (i = 0; i < x.length; i++) {
+  //     show = false;
+  //     for (j = 0; j < btnProduction.length; j++) {
+  //       if (x[i].querySelectorAll(btnProduction[j].id).length > 0) {
+  //         show = true;
+  //       }
+  //       if (show == true) {w3AddClass(x[i], "show");}
+  //       else {w3RemoveClass(x[i], "show"); }
+  //       }
+  //   }
+  //   x = document.querySelectorAll('li.show');
+  // }
+  //
+  //
+  // //filter by price
+  // priceValue = document.getElementById("price").value;
+  // if (priceValue < 0) {document.getElementById("price").value = 0;}
+  // if (priceValue > 50) {document.getElementById("price").value = 50;}
+  // if (priceValue > 0) {
+  //   for (i = 0; i < x.length; i++) {
+  //       if (x[i].querySelector(".price") == null) {cardValue = 0;}
+  //       else {cardValue = parseInt(x[i].querySelector(".price").textContent);}
+  //       if (cardValue >= priceValue) {w3AddClass(x[i], "show");}
+  //       else {w3RemoveClass(x[i], "show"); }
+  //     }
+  //   x = document.querySelectorAll('li.show');
+  // }
+  //
+  // //Filtering for the Requirements inputs
+  // if (document.getElementById("reqs").classList.contains("active")) {
+  //   document.getElementById("subfilterReqs").classList.remove("subfilterReqs-disabled"); //enabling the subfilters
+  //
+  //   //Requirements input filtering
+  //   temperatureValue = document.getElementById("slider1").value;
+  //   oxygenValue = document.getElementById("slider2").value;
+  //   oceansValue = document.getElementById("slider3").value;
+  //   venusValue = document.getElementById("slider4").value;
+  //   scienceValue = document.getElementById("slider5").value;
+  //   jovianValue = document.getElementById("slider6").value;
+  //   venusTagValue = document.getElementById("slider7").value;
+  //   earthValue = document.getElementById("slider8").value;
+  //
+  //   if ( temperatureValue > -30 || oxygenValue > 0 || oceansValue > 0 || venusValue > 0 || scienceValue > 0
+  //     || jovianValue > 0 || venusTagValue > 0 || earthValue > 0) {
+  //     for (i = 0; i < x.length; i++) {
+  //
+  //       //obtaining the data without writing over it
+  //       temperatureData = parseInt(x[i].dataset.temperature);
+  //       oxygenData = parseInt(x[i].dataset.oxygen);
+  //       oceansData = parseInt(x[i].dataset.oceans);
+  //       venusData = parseInt(x[i].dataset.venus);
+  //       scienceData = parseInt(x[i].dataset.science);
+  //       jovianData = parseInt(x[i].dataset.jovian);
+  //       venusTagData = parseInt(x[i].dataset.venustag);
+  //       earthData = parseInt(x[i].dataset.earth);
+  //
+  //
+  //
+  //       show = false;
+  //       if (temperatureValue > -30) {
+  //         if ( temperatureValue <= temperatureData ) { show = true;}
+  //       }
+  //       if (oxygenValue > 0 && oxygenData > 0) {
+  //         if ( oxygenValue <= oxygenData ) { show = true;}
+  //       }
+  //       if (oceansValue > 0) {
+  //         if ( oceansValue <= oceansData ) { show = true }
+  //       }
+  //       if (venusValue > 0 ) {
+  //         if ( venusValue <= venusData ) { show = true }
+  //       }
+  //       if (scienceValue > 0 ) {
+  //         if ( scienceValue <= scienceData ) { show = true }
+  //       }
+  //       if (jovianValue > 0 ) {
+  //         if ( jovianValue <= jovianData ) { show = true }
+  //       }
+  //       if (venusTagValue > 0 ) {
+  //         if ( venusTagValue <= venusTagData ) { show = true }
+  //       }
+  //       if (earthValue > 0 ) {
+  //         if ( earthValue <= earthData ) { show = true }
+  //       }
+  //
+  //       //the check
+  //       if (show) {w3AddClass(x[i], "show");}
+  //       else {w3RemoveClass(x[i], "show");}
+  //     }
+  //   }
+  // } else {
+  //   //to clear the inputs when the Requirements button is canceled
+  //   document.getElementById("slider1").value = -30;
+  //   document.getElementById("output1").innerHTML = -30;
+  //   document.getElementById("slider2").value = 0;
+  //   document.getElementById("output2").innerHTML = 0;
+  //   document.getElementById("slider3").value = 0;
+  //   document.getElementById("output3").innerHTML = 0;
+  //   document.getElementById("slider4").value = 0;
+  //   document.getElementById("output4").innerHTML = 0;
+  //   document.getElementById("slider5").value = 0;
+  //   document.getElementById("output5").innerHTML = 0;
+  //   document.getElementById("slider6").value = 0;
+  //   document.getElementById("output6").innerHTML = 0;
+  // }
 
 ///////////////////////////////////////////////////////////////////////////////
 
