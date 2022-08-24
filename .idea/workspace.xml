@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="649a30f7-70c3-42af-b8c7-7431ed510a15" name="Changes" comment="update map style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arknova-action.html" beforeDir="false" afterPath="$PROJECT_DIR$/arknova-action.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arknova-board.html" beforeDir="false" afterPath="$PROJECT_DIR$/arknova-board.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/arknova-cards-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/arknova-cards-list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/mystyles-ark.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles-ark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +64,8 @@
       <workItem from="1659521577298" duration="4047000" />
       <workItem from="1659618478972" duration="15148000" />
       <workItem from="1660310897803" duration="21228000" />
-      <workItem from="1660893472722" duration="1318000" />
+      <workItem from="1660893472722" duration="2023000" />
+      <workItem from="1661182667094" duration="10348000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1658946999201</created>

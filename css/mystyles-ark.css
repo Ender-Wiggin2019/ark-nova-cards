@@ -541,6 +541,7 @@ a {
 
 .background-color-beginner-map {background: linear-gradient(to right,#dd966f, #dd966f,#dd966f,#dd966f);}
 
+.background-color-return {background: linear-gradient(to right,#c6e4a0, #c6e4a0,#c6e4a0,#c6e4a0);}
 /*********** Style the tags ************/
 .icon-africa {background-image: url("../images-ark/africa.png") !important;
   background-position: -2px -2px !important;
@@ -796,6 +797,23 @@ input[type='radio'][name='buttonGroup']:checked + label { background-color:#a0a0
   text-shadow: 0 0 1px black;
 }
 
+.btn-return {
+    outline: none;
+    font-family: Arial;
+    color: #fff;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 0px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    font-family: Prototype;
+    background-color: #cc3333;
+    text-shadow: 0 0 1px black;
+}
 .btn-load-more {
     display: none;
     margin-top: 35px;
