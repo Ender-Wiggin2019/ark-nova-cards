@@ -691,7 +691,7 @@ function selectCard (clickedCard) {
 
     //showing or removing the CTA button and updating its url
     if (selectedCards.length > 0) {
-      document.getElementById("btn-selectedCards").href = "http://arknova.ender.lol/arknova-cards-list.html" + selectedCards;
+      document.getElementById("btn-selectedCards").href = "/arknova-cards-list.html" + selectedCards;
       document.getElementById("selectedCardsAmount").innerHTML = selectedCardsAmount;
       document.getElementById("btn-selectedCards").classList.remove("disabled");
       document.getElementById("btn-selectedCards").disabled = false;
