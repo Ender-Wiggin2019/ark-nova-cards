@@ -38,6 +38,7 @@ a {
 .cards4 {background-image: url("../images-ark/cards4.jpg")}
 .cards5 {background-image: url("../images-ark/cards5.jpg")}
 .cards6 {background-image: url("../images-ark/cards6.jpg")}
+.cards7 {background-image: url("../images-ark/cards7.jpg")}
 .cards-promo {background-image: url("../images-ark/cards-promo.jpg")}
 
 .c2 {background-position-x: -240px}
@@ -537,6 +538,9 @@ a {
 
 .background-color-animals {background: linear-gradient(to right,#f29806, #fdbf1c,#fdbf1c,#f29806);color:black !important}
 
+.background-color-marine-world {background: linear-gradient(to right,#3e578f, #3e578f, #3e578f, #3e578f);}
+
+
 .background-color-map {background: linear-gradient(to right,#8cc4dd, #8cc4dd,#8cc4dd,#8cc4dd);}
 
 .background-color-beginner-map {background: linear-gradient(to right,#dd966f, #dd966f,#dd966f,#dd966f);}
@@ -579,6 +583,9 @@ a {
 .icon-bear {background-image: url("../images-ark/bear.png") !important;
   background-position: -2px -2px !important;
   background-size: 40px !important;}
+.icon-marine {background-image: url("../images-ark/marine.png") !important;
+    background-position: -2px -2px !important;
+    background-size: 40px !important;}
 .icon-science {background-image: url("../images-ark/research.png") !important;
   background-position: -2px -2px !important;
   background-size: 40px !important;}
@@ -688,6 +695,23 @@ input[type='radio'][name='buttonGroup']:checked + label { background-color:#a0a0
   filter: none !important;
 }
 
+.btn0 {
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    font-weight: normal;
+    font-family: Arial;
+    color: #fff;
+    height: 38px;
+    width: 177px;
+    font-size: 14px;
+    border-radius: 0px;
+    margin-right: 20px;
+    /*margin-top: 5px;*/
+    letter-spacing: 1px;
+    line-height: 38px;
+    padding-bottom: 20px;
+}
 
 
 .btn1 {

@@ -209,6 +209,7 @@ function filterFunction(id) {
   for (i = 0; i < x.length; i++) {w3AddClass(x[i], "show");}
 
   //filtering by Type + Tag + Deck + Reqs
+  btnExp = document.querySelectorAll('button.active.btn0');
   btnType = document.querySelectorAll('button.active.btn1');
   btnTag = document.querySelectorAll('button.active.btn2');
   btnDeck = document.querySelectorAll('button.active.btn3');
@@ -217,8 +218,10 @@ function filterFunction(id) {
 
   //Text input filtering
   li = document.querySelectorAll('li.show');   //obtaining the new visible list after the subfilters check
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
+  // input = document.getElementById("myInput");
+  filter = ""
+
+  // filter = input.value.toUpperCase();
   filter = filter.split(" ");
   for (i = 0;  i < li.length; i++) {
     display = true;
@@ -231,6 +234,24 @@ function filterFunction(id) {
       } else { li[i].classList.remove("show");}
   }
   x = document.querySelectorAll('li.show');
+
+  // filter by Expansion
+  if (btnExp.length > 0) {
+    console.log('btnExp', btnExp)
+    for (i = 0; i < x.length; i++) {
+      show = false;
+      for (j = 0; j < btnExp.length; j++) {
+        if (x[i].className.indexOf(btnExp[j].id) > -1) {
+          show = true;
+        }
+        if (show == true) {w3AddClass(x[i], "show");}
+        else {w3RemoveClass(x[i], "show"); }
+      }
+      // console.log(x[i].className);
+    }
+    x = document.querySelectorAll('li.show');
+  }
+
   //filter by Card type
   if (btnType.length > 0) {
     for (i = 0; i < x.length; i++) {
